@@ -24,7 +24,7 @@ export const BeerList = () => {
   ])
 
   useEffect(() => {
-    if(!allBeer.length) {
+    if(!allBeer.length && page !== 13) {
       getBeer(page + 1);
     }
   }, [allBeer.length, page, getBeer]);
@@ -54,7 +54,7 @@ export const BeerList = () => {
   const handleScroll = () => {
     const { scrollTop, scrollHeight, clientHeight } = listRef.current;
 
-    if ((scrollTop + clientHeight) === scrollHeight) {
+    if ((scrollTop + clientHeight) === scrollHeight && page !== 13) {
       const fiveDeleteIds = renderBeer.slice(0,5).map(el => el.id);
       handleDelete(fiveDeleteIds);
 
