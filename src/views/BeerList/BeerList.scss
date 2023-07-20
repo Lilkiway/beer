@@ -1,0 +1,106 @@
+.beer_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(42, 42, 42);
+  font-size: 1.5rem;
+  header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    color: rgba(169, 169, 169, 0.659);
+    padding: 0 2rem;
+    position: relative;
+
+    &::after, &::before {
+      position: absolute;
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: rgba(169, 169, 169, 0.659);
+      border-radius: 50%;
+      top: 50%;
+    }
+    &::before {
+      right: 0;
+    }
+    &::after {
+      left: 0;
+    }
+    h1 {
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.7rem;
+      word-spacing: 1rem;
+    }
+    button {
+      padding: 0.5rem 5rem;
+      font-size: 2rem;
+      border: 0.1rem solid  rgba(106, 142, 35, 0.334);
+      border-radius: 5px;
+      background-color: rgba(80, 80, 80, 0.2);
+      cursor: pointer;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+.beer_content {
+  max-width: 150rem;
+  width: 100%;
+  height: 80rem;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.beer_box {
+  border-top: 0.1rem solid rgba(106, 142, 35, 0.334);
+  height: 16rem;
+  position: relative;
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &__selected {
+    background: rgb(42,42,42);
+    background: linear-gradient(90deg, rgba(42,42,42,1) 0%, rgba(64,64,64,0.8562018557422969) 50%, rgba(42,42,42,1) 100%);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: olivedrab;
+    span {
+      color: darkolivegreen;
+      font-weight: 200;
+    }
+  }
+  &__desc {
+    color: rgba(169, 169, 169, 0.659);
+    font-size: 2rem;
+    padding: 0 4rem;
+    letter-spacing: 0.4px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+.beer_loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 5rem;
+  color: rgba(169, 169, 169, 0.659);
+}

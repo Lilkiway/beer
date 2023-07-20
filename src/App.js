@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BeerList } from "./views/BeerList";
+import { OneBeer } from "./views/OneBeer";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <BeerList />
+  },
+  {
+    path: '/beer/:id',
+    element: <OneBeer />,
+  }
+])
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />
 }
 
 export default App;
